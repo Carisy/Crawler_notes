@@ -9,5 +9,11 @@
   
   
   
-  ## 杂
-  spider.py中的parse方法是处理scrapy爬虫爬行到网页响应（response）的默认方法
+## 杂
+spider.py中的parse方法是处理scrapy爬虫爬行到网页响应（response）的默认方法
+
+## robots.txt
+scrapy默认是开着的，写之前要在settings.py中将它注释掉
+即
+# Obey robots.txt rules
+# ROBOTSTXT_OBEY = True
