@@ -1,2 +1,8 @@
-大标题  
-====  
+#scrapy  
+ ==== 
+##利用scrapy shell网站解析测试（JPHP306）
+-----------------
+1.scraoy 要解析的网址 --nolog
+2.进入>>>下
+3.ti = sel.xpath("/html/head/title")
+  print(ti)
