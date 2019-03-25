@@ -1,8 +1,13 @@
-#scrapy  
+# scrapy  
 
-##利用scrapy shell网站解析测试（JPHP306）
+## 利用scrapy shell网站解析测试（JPHP306）
 
 1.scraoy 要解析的网址 --nolog
 2.进入>>>下
 3.ti = sel.xpath("/html/head/title")
   print(ti)
+  
+  
+  
+  ## 杂
+  spider.py中的parse方法是处理scrapy爬虫爬行到网页响应（response）的默认方法
