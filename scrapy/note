@@ -71,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 
-##关于请求头（cookies和User-Agent另有配置，没写）
+##关于请求头（cookies和User-Agent另有配置，没写）（最好通过查看浏览器浏览者以网页的请求报头进行模拟）
 在setting文件中
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
@@ -88,6 +88,13 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 
+Ctrl + Shift + F 全局查找
+Ctrl + Shift + R 全局替换
+(.*?):(.*)
+'$1':'$2',
+
+
+
 ###Referer
 'Referer': 'www.baidu.com'即从www.baidu.com页面点击链接来这个页面的
 
@@ -102,3 +109,17 @@ DEFAULT_REQUEST_HEADERS = {
 如果使用settings的cookie就把COOKIES_ENABLED设置为False
 ####使用
 如果，网站不需要登录就能爬去信息，可以禁用cookies
+
+
+
+
+
+##ajax请求
+豆瓣爬书https://read.douban.com/category/?kind=100
+这个网页的书名，作者等信息都是通过ajax再请求加载出来的。
+并且ajax的url为https://read.douban.com/j/kind/,并且请求方式是post
+
+
+##scrapy post请求
+scrapy默认发送的是get请求
+发送post请求时需要重载start_requests(self):
