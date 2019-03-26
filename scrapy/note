@@ -23,7 +23,7 @@ scrapy默认是开着的，写之前要在settings.py中将它注释掉
 （1）在settings中设置用户代理池
 # 用户代理（User-Agent）池设置
 UAPOOL = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"，
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1",
     "Mozilla/5.0 (X11; CrOS i686 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11",
@@ -91,3 +91,14 @@ DEFAULT_REQUEST_HEADERS = {
 ###Referer
 'Referer': 'www.baidu.com'即从www.baidu.com页面点击链接来这个页面的
 
+
+###cookies（写爬虫之前一定要考虑）
+在scrapy中，
+当COOKIES_ENABLED是注释的时候scrapy默认没有开启cookie
+当COOKIES_ENABLED没有注释设置为False的时候scrapy默认使用了settings里面的cookie
+当COOKIES_ENABLED设置为True的时候scrapy就会把settings的cookie关掉，使用自定义cookie
+总结：
+如果使用自定义cookie就把COOKIES_ENABLED设置为True
+如果使用settings的cookie就把COOKIES_ENABLED设置为False
+####使用
+如果，网站不需要登录就能爬去信息，可以禁用cookies
