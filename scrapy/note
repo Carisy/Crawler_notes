@@ -144,3 +144,40 @@ some_books = response.xpath('//li[@class="subject-item"]')
 item['book_name'] = book.xpath('.//h2[@class=""]/a/@title').extract_first()
 //返回的元素是这个列表中的第一个元素
 
+
+###解析时元素碰到空格如何解决
+1.join()方法+split()方法，可以去除全部空格
+# join为字符字符串合成传入一个字符串列表，split用于字符串分割可以按规则进行分割
+
+>>> a = " a b c "
+>>> b = a.split()  # 字符串按空格分割成列表
+>>> b ['a', 'b', 'c']
+>>> c = "".join(b) # 使用一个空字符串合成列表内容生成新的字符串
+>>> c 'abc'
+
+# 快捷用法
+>>> a = " a b c "
+>>> "".join(a.split())
+'abc'
+又例：
+>>> a = 'hello world'
+>>> a = ''.join(a.split())
+>>> print(a)
+helloworld
+
+2.使用正则表达式
+>>> a = 'hello world'
+>>> import re
+>>> strinfo = re.compile()
+>>> strinfo = re.compile(' ')
+
+>>> b = strinfo.sub('', a)
+>>> print(b)
+helloworld
+
+3.使用replace方法
+>>> a = 'hello world'
+>>> a.replace(' ', '')  //用‘ ’替换‘’
+'helloworld'
+
+
