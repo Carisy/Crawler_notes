@@ -126,3 +126,21 @@ scrapy默认发送的是get请求
 
 
 ##关于解析（P3P482）
+一次解析：
+some_books = response.xpath('//li[@class="subject-item"]')
+二次解析：
+加点在li节点内部提取：item['book_name'] = book.xpath('.//h2[@class=""]/a/@title')
+不加点从根节点开始提取：item['book_name'] = book.xpath('//h2[@class=""]/a/@title')
+
+
+###extract_first()
+scrapy在经过几次解析之后，限定了匹配的范围，使XPATH只可以匹配到一个元素，然后用extract（）方法提取，结果是一个列表形式（列表里的元素只有一个，是我们所要的）。
+我们将extract_first（）方法替换extract（）方法，来获取列表内容的第一个元素（不再是列表，而是里面的元素）
+some_books = response.xpath('//li[@class="subject-item"]')
+item['book_name'] = book.xpath('.//h2[@class=""]/a/@title').extract()
+//获取的元素是列表形式，是一个只包含一个元素的列表
+
+some_books = response.xpath('//li[@class="subject-item"]')
+item['book_name'] = book.xpath('.//h2[@class=""]/a/@title').extract_first()
+//返回的元素是这个列表中的第一个元素
+
