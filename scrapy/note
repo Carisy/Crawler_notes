@@ -123,3 +123,6 @@ Ctrl + Shift + R 全局替换
 ##scrapy post请求
 scrapy默认发送的是get请求
 发送post请求时需要重载start_requests(self):
+
+
+##关于解析（P3P482）
