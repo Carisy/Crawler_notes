@@ -182,6 +182,6 @@ helloworld
 
 ##scrapy爬取并请求下一页链接
 base_url = 'https://book.douban.com'
-part_url = response.xpath('//*[@id="subject_list"]/div[2]/span[4]/a/@href').extract_first()
+part_url = response.xpath('//*[@id="subject_list"]/div[2]/span[4]/a/@href').extract_first() //提取下一页链接关键部分或者可能是完整部分
 url = base_url+part_url
 yield scrapy.Request(url=url, callback=self.parse())
