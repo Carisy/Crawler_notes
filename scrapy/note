@@ -203,3 +203,56 @@ some_books = response.xpath('//li[@class="subject-item"]')
 
 ##返回网址响应时，注意回到函数的参数，没有括号
 yield scrapy.Request(url=one_url, callback=self.follow_parse)
+
+
+
+##scrapy如何用mongodb保存爬去的数据
+1.在items.py文件的类中加上collection = 'book'这句话（collection代表mongodb存储的collection名称）
+class DoubanItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    collection ='book'         //如果要用mongodb存储，加上这句话
+    book_name = scrapy.Field()
+    book_author = scrapy.Field()
+    book_score = scrapy.Field()
+2.在settings.py文件中
+#MONGODB
+MONGO_URI = 'localhost'
+MONGO_DB = 'book'
+3.在pipelines文件中。
+import pymongo
+
+class MongoPipeline(object):
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI'),
+            mongo_db=crawler.settings.get('MONGO_DB')
+        )
+
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def process_item(self, item, spider):
+        name = item.collection
+        self.db[name].insert(dict(item))
+        return item
+
+    def close_spider(self, spider):
+        self.client.close()
+
+  4.在settings文件中，
+  # Configure item pipelines
+  # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+  ITEM_PIPELINES = {
+    'douban.pipelines.MongoPipeline': 300,
+  }
+  
+  
+  ##如何用Robo 3T看mongodb数据
+  看那个数据，先建立数据库，然后爬，存储，就能看到了
