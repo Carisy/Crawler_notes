@@ -256,3 +256,8 @@ class MongoPipeline(object):
   
   ##如何用Robo 3T看mongodb数据
   看那个数据，先建立数据库，然后爬，存储，就能看到了
+  
+  ###如何用Robo3T查询（重复）
+  db.getCollection('集合名').find({'字段名':'字段属性'})
+  如：
+  db.getCollection('book').find({'book_name':'解忧杂货店'})
