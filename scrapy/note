@@ -185,3 +185,21 @@ base_url = 'https://book.douban.com'
 part_url = response.xpath('//*[@id="subject_list"]/div[2]/span[4]/a/@href').extract_first() //提取下一页链接关键部分或者可能是完整部分
 url = base_url+part_url
 yield scrapy.Request(url=url, callback=self.parse())
+
+
+##解析时使用正则表达式
+some_books = response.xpath('//li[@class="subject-item"]')
+        for book in some_books:
+        item['book_author'] = book.xpath('.//div[@class="pub"]/text()').re_first('\s*(\S.*?)\/')
+        
+//解析时碰到很多换行符和字符串用\s*
+
+注意：
+在scrapy中，
+不能直接用.re，如item = book.xpath('.').re('\s*(\S.*?)\/')，需要xpath等解析器来过渡
+.re（）功能与xpath等解析器类似
+.re_first()功能与.xpath（）.extract_first（）等类似
+
+
+##返回网址响应时，注意回到函数的参数，没有括号
+yield scrapy.Request(url=one_url, callback=self.follow_parse)
