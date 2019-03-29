@@ -1,1 +1,8 @@
-#
+#关于appium
+##
+手机用数据线连接电脑后，没找到设备，可能是vid的问题，也可能是手机上对突然跳出的授权页面，没有点授权
+##
+start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd
+
+
+
