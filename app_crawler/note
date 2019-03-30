@@ -16,4 +16,4 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 #关于手机模拟器使用mitmproxy
 踩坑记录：
 启动，设置代理后报killed by block_global
-解决：启动命令带参数：--set block_global=false
+解决：启动命令带参数：--set block_global=false（如mitmdump --set block_global=false）
