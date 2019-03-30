@@ -12,3 +12,5 @@ start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他�
 Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 2.勾选Enable SSL proxying，接着在下方点击Add添加
 3.输入 Host: * , Port: 443，点击OK
+
+#关于手机模拟器使用mitmproxy
