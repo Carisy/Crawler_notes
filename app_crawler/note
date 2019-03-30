@@ -14,3 +14,6 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 3.输入 Host: * , Port: 443，点击OK
 
 #关于手机模拟器使用mitmproxy
+踩坑记录：
+启动，设置代理后报killed by block_global
+解决：启动命令带参数：--set block_global=false
