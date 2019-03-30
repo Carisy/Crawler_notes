@@ -5,4 +5,5 @@
 start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd
 
 
-
+#关于手机模拟器使用charles代理
+手机模拟器的wifi设置完代理之后，还需要使用网络功能，电脑才能收到拒绝还是允许的请求
