@@ -3,6 +3,14 @@
 手机用数据线连接电脑后，没找到设备，可能是vid的问题，也可能是手机上对突然跳出的授权页面，没有点授权
 ##
 start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd
+##appnium连接模拟器
+###adb server version <31> doesn't match this client <36>;killing...
+可能adb版本和模拟器中的adb版本不同，而且环境变量配置有问题
+1.配置两处adb环境变量
+2.找到SDK的目录和夜神模拟器的目录，将SDK目录下的adb.exe文件，复制到夜神模拟器的目录下，
+因为夜神模拟器目录下原本的adb文件名字叫做nox_adb.exe，
+因此复制过去之后也得改名为nox_adb.exe
+3.检查
 
 
 #关于手机模拟器使用charles代理
