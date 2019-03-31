@@ -17,3 +17,7 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 踩坑记录：
 启动，设置代理后报killed by block_global
 解决：启动命令带参数：--set block_global=false（如mitmdump --set block_global=false）
+
+
+
+#电脑网络换ip地址后，如果要用代理，要在手机上及时更新代理服务器ip地址（即电脑ip地址），用ipconfig在电脑cmd中查询
