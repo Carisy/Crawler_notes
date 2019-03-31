@@ -6,7 +6,9 @@
 adb kill-server
 adb start-server
 ##
-start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd
+start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd（但是.android里面必须要
+有/platform-tools/abd.exe等SDK应该要有的文件，
+必须和/avd在一个文件夹下，没有的话，在androidsdk设置里重新下到这个文件里）
 ##appnium连接模拟器
 ###adb server version <31> doesn't match this client <36>;killing...
 可能adb版本和模拟器中的adb版本不同，而且环境变量配置有问题
@@ -29,6 +31,10 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 踩坑记录：
 启动，设置代理后报killed by block_global
 解决：启动命令带参数：--set block_global=false（如mitmdump --set block_global=false）
+##手机模拟器使用appnium问题
+通常出现问题的时候，可能是因为目前运行服务器端的adb版本（也就是夜神模拟器的adb版本）比客户端的版本（也就是SDK目录下的adb版本）低，解决方法如下：
+1.关闭夜神模拟器。同时去任务管理器里看下，adb.exe以及nox_adb.exe这2个进程有没有在运行？有的话就结束掉。
+2.找到SDK的目录和夜神模拟器的目录，将SDK目录（D:\Program Files\Android\android-sdk\platform-tools）下的adb.exe文件，复制到夜神模拟器的目录（D:\Program Files\Nox\bin）下，将夜神模拟器目录下原本的adb.exe和nox_adb.exe修改文件名为adb_bak.exe和nox_adb_bak.exe，将从SDK目录复制过来的adb.exe放在夜神目录下，同时复制一份改名为nox_adb.exe
 
 
 
