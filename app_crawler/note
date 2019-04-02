@@ -19,6 +19,8 @@ start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他�
 3.检查
 
 
+
+
 #关于手机模拟器使用charles代理
 手机模拟器的wifi设置完代理之后，还需要使用网络功能，电脑才能收到拒绝还是允许的请求
 ##charles乱码问题
@@ -36,6 +38,8 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 1.关闭夜神模拟器。同时去任务管理器里看下，adb.exe以及nox_adb.exe这2个进程有没有在运行？有的话就结束掉。
 2.找到SDK的目录和夜神模拟器的目录，将SDK目录（D:\Program Files\Android\android-sdk\platform-tools）下的adb.exe文件，复制到夜神模拟器的目录（D:\Program Files\Nox\bin）下，将夜神模拟器目录下原本的adb.exe和nox_adb.exe修改文件名为adb_bak.exe和nox_adb_bak.exe，将从SDK目录复制过来的adb.exe放在夜神目录下，同时复制一份改名为nox_adb.exe
 
+
+##一下自可能会有多条并列的数据，如一个请求发出，可能会一下子返回多条评论
 
 
 #电脑网络换ip地址后，如果要用代理，要在手机上及时更新代理服务器ip地址（即电脑ip地址），用ipconfig在电脑cmd中查询
