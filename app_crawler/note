@@ -42,9 +42,11 @@ Proxy –> SSL Proxying Setting –> Enable SSL Proxying
 发现用mitmdump运行py文件时，很多库会找不到（这些库如果正常运行，是会正常被找到的），比如request库，pymongo库，pymysql库等等
 所以是不是库出问题了，是mitpmdump出问题了
 解决:
-把我们的脚本xx.py（要运行的）放在与比如requests（找不到的库）一个文件下执行
+1，把我们的脚本xx.py（要运行的）放在与比如requests（找不到的库）一个文件下执行
 可以通过上述命令看到我的requests库在D:\my-install\Anaconda\Lib\site-packages，我们把douyin_t.py放在这个文件夹下
 https://zhuanlan.zhihu.com/p/41492085
+2.
+https://zhuanlan.zhihu.com/p/57091195
 
 ##一下自可能会有多条并列的数据，如一个请求发出，可能会一下子返回多条评论
 
