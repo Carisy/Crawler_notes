@@ -52,3 +52,10 @@ https://zhuanlan.zhihu.com/p/57091195
 
 
 #电脑网络换ip地址后，如果要用代理，要在手机上及时更新代理服务器ip地址（即电脑ip地址），用ipconfig在电脑cmd中查询
+
+
+
+
+#抓取app时，接口地址越详细越好，不然可能抓错包，导致json无法解析
+如aweme-eagle.snssdk.com，json出错，无输出
+https://aweme-eagle.snssdk.com/aweme/v1/feed/不出错，有输出
