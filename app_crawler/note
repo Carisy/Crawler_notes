@@ -61,3 +61,4 @@ https://zhuanlan.zhihu.com/p/57091195
 https://aweme-eagle.snssdk.com/aweme/v1/feed/不出错，有输出
 
 #mitmdump运行的script文件，其中script.py文件似乎只要有一处出错，就没有输出，只有看url的功能了
+#可以一边运行mitmdump，一边改script，调试，不需要关mitmdump，改好之后，保存script，运行的mitmdump直接运行改好的script
