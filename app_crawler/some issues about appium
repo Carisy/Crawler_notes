@@ -17,5 +17,5 @@ SDK目录是指tools，platform-tools的上级目录
 1.可以尝试删去三个环境变量，重新新建写上去
 2.尝试其他方式
 3.最后，是在没有办法了，卸载android studio 。重新安装，注意目录按照目录结构推荐设置。
-可以参考https://segmentfault.com/a/1190000018056430（参考安装软件和目录结构），
+可以参考https://segmentfault.com/a/1190000018056430（参考安装软件和目录结构，注我安装SDK时Android Virtual Device也打勾了，感觉不装没影响，可以不勾），
 https://blog.csdn.net/qq_33658730/article/details/78547789（参考如何设置环境变量）
