@@ -1,3 +1,4 @@
+#问题一
 appium 在start session时，报错在在自己设置的ANDROID_HOME环境变量中，找不到adb.exe，问我有没有将android sdk安装在这个路径上。
 即如ErrorAn unknown server-side error occurred while processing the command. Original error: 
 Could not find adb.exe in D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;\platform-tools\adb.exe,
@@ -19,3 +20,13 @@ SDK目录是指tools，platform-tools的上级目录
 3.最后，是在没有办法了，卸载android studio 。重新安装，注意目录按照目录结构推荐设置。
 可以参考https://segmentfault.com/a/1190000018056430（参考安装软件和目录结构，注我安装SDK时Android Virtual Device也打勾了，感觉不装没影响，可以不勾），
 https://blog.csdn.net/qq_33658730/article/details/78547789（参考如何设置环境变量）
+
+
+
+
+#问题二
+当修改完环境变量，可能不会立即生效。但用管理员权限运行appnium就会在此次生效
+
+
+#问题三
+当执行连接appium服务的代码时，我们需要先开启appium软件，start server。不然会报错连接问题
