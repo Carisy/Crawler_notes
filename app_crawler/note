@@ -59,3 +59,5 @@ https://zhuanlan.zhihu.com/p/57091195
 #抓取app时，接口地址越详细越好，不然可能抓错包，导致json无法解析
 如aweme-eagle.snssdk.com，json出错，无输出
 https://aweme-eagle.snssdk.com/aweme/v1/feed/不出错，有输出
+
+#mitmdump运行的script文件，其中script.py文件似乎只要有一处出错，就没有输出，只有看url的功能了
