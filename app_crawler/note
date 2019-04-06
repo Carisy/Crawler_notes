@@ -8,7 +8,7 @@ adb start-server
 ##
 start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他表达不准确，是android/avd（但是.android里面必须要
 有/platform-tools/abd.exe等SDK应该要有的文件，
-必须和/avd在一个文件夹下，没有的话，在androidsdk设置里重新下到这个文件里）
+必须和/avd在一个文件夹下，没有的话，在androidsdk设置里重新下到这个文件里）//可能这个理解是错的
 ##appnium连接模拟器
 ###adb server version <31> doesn't match this client <36>;killing...
 可能adb版本和模拟器中的adb版本不同，而且环境变量配置有问题
