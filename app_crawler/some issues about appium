@@ -1,0 +1,21 @@
+appium 在start session时，报错在在自己设置的ANDROID_HOME环境变量中，找不到adb.exe，问我有没有将android sdk安装在这个路径上。
+即如ErrorAn unknown server-side error occurred while processing the command. Original error: 
+Could not find adb.exe in D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;\platform-tools\adb.exe,
+D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;\emulator\adb.exe,
+D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;\tools\adb.exe,
+D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;\tools\bin\adb.exe. 
+Do you have the Android SDK installed at 'D:\pythonsoft\AndroidStudio\SDK\android-sdk_r24.4.1-windows\android-sdk-windows;'?
+
+注：
+目录结构推荐：
+1.Android
+2.D:\Android\Android Studio和D:\Android\SDK
+3.D:\Android\Android\下文件和D:\Android\SDK\下文件（包括build-tools，emulator，extras，patcher，platforms，platform-tools，skins，sources，system-images，tools）
+
+SDK目录是指tools，platform-tools的上级目录
+解决：
+1.可以尝试删去三个环境变量，重新新建写上去
+2.尝试其他方式
+3.最后，是在没有办法了，卸载android studio 。重新安装，注意目录按照目录结构推荐设置。
+可以参考https://segmentfault.com/a/1190000018056430（参考安装软件和目录结构），
+https://blog.csdn.net/qq_33658730/article/details/78547789（参考如何设置环境变量）
