@@ -18,6 +18,7 @@ start session时报错，说ANDROID_HOME关于SDK环境变量不对，其实他�
 因此复制过去之后也得改名为nox_adb.exe
 3.检查
 
+连接：（如果不行，可以进入模拟器nox_adb.exe目录，然后启动cmd）启动cmd，输入  nox_adb.exe connect 127.0.0.1:62001，再继续，输入adb devices
 
 
 
