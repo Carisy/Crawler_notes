@@ -261,3 +261,26 @@ class MongoPipeline(object):
   db.getCollection('集合名').find({'字段名':'字段属性'})
   如：
   db.getCollection('book').find({'book_name':'解忧杂货店'})
+  
+  
+  
+  #关于item结构形式和如何处理
+  若：
+    collection = 'comment'
+    user = scrapy.Field()
+    book = scrapy.Field()
+    score = scrapy.Field()
+    date = scrapy.Field()
+  则在spider.py文件中parse（）处理方法中，
+  print(item),输出item是字典形式，得{'book': '宋徽宗', 'date': '2018-10-28 09:11:29', 'score': 1, 'user': '乐乐'}结构
+  print(item.collection)，输出字符串，得comment
+  
+  在pipelines.py文件process_item（）方法中（注：没有from douban.items import UtiItem），
+  print(item),输出item是字典形式,得{'book': '宋徽宗', 'date': '2018-10-28 09:11:29', 'score': 1, 'user': '乐乐'}
+ print(item['user'])，输出字符串，得mumudancing
+ print(item.user)，输出item.user，
+  报错：raise AttributeError("Use item[%r] to get field value" % name)
+AttributeError: Use item['user'] to get field value
+
+
+  
