@@ -63,3 +63,11 @@ https://aweme-eagle.snssdk.com/aweme/v1/feed/不出错，有输出
 
 #mitmdump运行的script文件，其中script.py文件似乎只要有一处出错，就没有输出，只有看url的功能了
 #可以一边运行mitmdump，一边改script，调试，不需要关mitmdump，改好之后，保存script，运行的mitmdump直接运行改好的script
+
+
+
+#报错：
+selenium.common.exceptions.WebDriverException: 
+Message: An unknown server-side error occurred while processing the command. 
+Original error: The swipe did not complete successfully
+注：可能超过了最大等待时间还没完成滑动，在真机上报错，在手机模拟器上没报错。
