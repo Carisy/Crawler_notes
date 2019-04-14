@@ -1,5 +1,25 @@
 # scrapy  
 
+##关于settings.py文件一开始的处理
+###关于是否遵守robots.txt协议
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True//遵守
+
+# Obey robots.txt rules
+# ROBOTSTXT_OBEY = True//不遵守
+
+###关于cookies是否禁用
+
+###关于限速
+
+
+
+
+
+
+
+
 ## 利用scrapy shell网站解析测试（JPHP306）
 
 1.scrapy shll 要解析的网址 --nolog
