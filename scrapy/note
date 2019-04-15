@@ -2,16 +2,29 @@
 
 ##关于settings.py文件一开始的处理
 ###关于是否遵守robots.txt协议
-
+代码：
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True//遵守
 
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True//不遵守
 
-###关于cookies是否禁用
-
+ 
 ###关于限速
+并发与延迟<===
+代码：
+#1、下载器总共最大处理的并发请求数,默认值16
+#CONCURRENT_REQUESTS = 32
+#2、每个域名能够被执行的最大并发请求数目，默认值8
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#3、能够被单个IP处理的并发请求数，默认值0，代表无限制，需要注意两点
+#I、如果不为零，那CONCURRENT_REQUESTS_PER_DOMAIN将被忽略，即并发数的限制是按照每个IP来计算，而不是每个域名
+#II、该设置也影响DOWNLOAD_DELAY，如果该值不为零，那么DOWNLOAD_DELAY下载延迟是限制每个IP而不是每个域
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+#4、如果没有开启智能限速，这个值就代表一个规定死的值，代表对同一网址延迟请求的秒数
+#下载器在下载同一个网站下一个页面前需要等待的时间,该选项可以用来限制爬取速度,减轻服务器压力。同时也支持小数:0.25 以秒为单位
+#DOWNLOAD_DELAY = 3
 
 
 
